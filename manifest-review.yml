@@ -1,4 +1,4 @@
 applications:
 - name: pal-tracker
   path: build/libs/pal-tracker.jar
-  host: gat-pal-tracker-review
+  host: gt-pal-tracker-review
