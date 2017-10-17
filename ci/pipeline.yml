@@ -46,6 +46,9 @@ jobs:
     params: {bump: patch}
   - task: build and test
     file: pal-tracker/ci/build.yml
+  - put: pal-tracker-artifacts
+    params:
+      file: build-output/pal-tracker-*.jar
   - put: version
     params:
       file: version/number
