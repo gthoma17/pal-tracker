@@ -5,17 +5,21 @@ import lombok.*;
 import java.time.LocalDate;
 
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-@RequiredArgsConstructor
+@NoArgsConstructor
+@ToString
+@EqualsAndHashCode
 public class TimeEntry {
     private long id;
-    @NonNull
     private long projectId;
-    @NonNull
     private long userId;
-    @NonNull
     private LocalDate date;
-    @NonNull
     private int hours;
+
+    public TimeEntry(long projectId, long userId, LocalDate date, int hours) {
+        this.projectId = projectId;
+        this.userId = userId;
+        this.date = date;
+        this.hours = hours;
+    }
 }
