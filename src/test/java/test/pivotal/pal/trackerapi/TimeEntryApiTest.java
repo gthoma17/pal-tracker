@@ -87,7 +87,12 @@ public class TimeEntryApiTest {
         TimeEntry updatedTimeEntry = new TimeEntry(2, 3, LocalDate.parse("2017-01-09"), 9);
 
 
-        ResponseEntity<String> updateResponse = restTemplate.exchange("/time-entries/" + id, HttpMethod.PUT, new HttpEntity<>(updatedTimeEntry, null), String.class);
+        ResponseEntity<String> updateResponse = restTemplate.exchange(
+                "/time-entries/" + id,
+                HttpMethod.PUT,
+                new HttpEntity<>(updatedTimeEntry, null),
+                String.class
+        );
 
 
         assertThat(updateResponse.getStatusCode()).isEqualTo(HttpStatus.OK);
