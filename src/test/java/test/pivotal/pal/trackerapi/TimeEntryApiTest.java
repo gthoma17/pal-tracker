@@ -36,7 +36,7 @@ public class TimeEntryApiTest {
     @Before
     public void setUp() throws Exception {
         MysqlDataSource dataSource = new MysqlDataSource();
-        dataSource.setUrl(System.getenv("SPRING_DATASOURCE_URL"));
+        dataSource.setUrl(System.getenv("spring.datasource.url"));
 
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
         jdbcTemplate.execute("TRUNCATE time_entries");
